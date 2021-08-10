@@ -1,0 +1,84 @@
+﻿<!doctype html>
+<html>
+ <head>
+   <style>
+     @font-face {
+  font-family: 'NotoSansBrahmi-Regular';
+  src: URL('Fonts/NotoSansBrahmi-Regular.ttf') format('truetype');
+}
+@font-face{
+  font-family: 'NotoSansDevanagari-Regular';
+  src: URL('Fonts/NotoSansDevanagari-Regular.ttf')format('truetype');
+}
+div{
+  background:transparent;
+  height:0px;
+  width:0px;
+ border-left:700px solid transparent;
+  border-right:700px solid transparent;
+  border-top:1200px solid #ffa500;
+  position: absolute;
+  top:350px;
+  left:0px;
+}
+#yellow{
+  background:#ffd700;
+  height:600px;
+  width:600px;
+  border-radius:300px; 
+  position: absolute;
+  top:500px;
+  left:400px;
+}
+#p{
+   font-size:40px;
+   position: absolute;
+   top:650px;
+   left:550px;
+  color:#ffffff;
+}
+#s{
+   font-size:40px;
+   position: absolute;
+   top:750px;
+   left:475px;
+  color:#ffffff;
+}  
+   </style>  
+ </head> 
+ <body> 
+  <h1> </h1> 
+  <div></div> 
+  <span id="yellow"></span> 
+  <p id="p"></p> 
+  <p id="s">मुहूर्त : घटि : विघटि : लिप्ता</p>
+  <script>
+    function reload() {
+var now = new Date(),
+then = new Date(
+now.getFullYear(),
+now.getMonth(),
+now.getDate(),
+0,0,0),
+dif = now.getTime() - then.getTime();
+var diff = dif-1615667;
+var lipt = diff/400;
+var lipta = Math.floor(lipt);
+var लिप्ता = lipta%60;
+var se = diff/1000;
+var vighati = se/24;
+var vigh = Math.floor(vighati);
+var विघटि = vigh%24;
+var ghat = vigh/60;
+var ghati = Math.floor(ghat);
+var घटि = ghati%60;
+var mahur = ghati/2;
+var मुहूर्त = Math.floor(mahur%30);
+var platform = document.getElementById("p");
+platform.innerHTML = मुहूर्त+"&nbsp:&nbsp"+घटि
++"&nbsp:&nbsp"+विघटि+"&nbsp:&nbsp"+लिप्ता;
+}
+setInterval(reload, 1);  
+  </script> 
+ </body>
+</html>
